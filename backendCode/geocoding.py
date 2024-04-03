@@ -42,5 +42,3 @@ def reverse_geocoding(latlang):
     return address
 
 
-# add = reverse_geocoding('23.7465882,90.3846205')
-# print(add)
