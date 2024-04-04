@@ -4,16 +4,15 @@ from backendCode.geocoding import reverse_geocoding, geocoding_from_address
 from backendCode.nearbyplaces import search_nearby_places
 from home_page.models import BusInformation
 from backendCode.findBusByDirection import find_distance
-from decouple import config
-
+from django.conf import settings
 # Create your views here.
 
 
 def searchnearby_address(request):
     location = request.POST['userlocationaddress']
     # print(location)
-    text = config('KEY2')
-    # url = f"https://maps.googleapis.com/maps/api/js?key={text}&callback=initMap&libraries=&v=weekly"
+    text = settings.GOOGLE_API_KEY
+    url = f"https://maps.googleapis.com/maps/api/js?key={text}&callback=initMap&libraries=&v=weekly"
     data = geocoding_from_address(location)
     nearby_list = search_nearby_places(data['lat'], data['lng'])
     data.update({'nearlist': nearby_list})
@@ -26,8 +25,8 @@ def searchnearby_latlng(request):
     lat, lng = location.split(sep=',', maxsplit=1)
     formatted_address = reverse_geocoding(location)
     nearby_list = search_nearby_places(lat=lat, lng=lng)
-    text = config('KEY2')
-    # url = f"https://maps.googleapis.com/maps/api/js?key={text}&callback=initMap&libraries=&v=weekly"
+    text = settings.GOOGLE_API_KEY
+    url = f"https://maps.googleapis.com/maps/api/js?key={text}&callback=initMap&libraries=&v=weekly"
     data = {
         'formatted_address': formatted_address,
         'nearlist': nearby_list,

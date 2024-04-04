@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+GOOGLE_API_KEY = 'AIzaSyB85LQ0LlYnWmPJnUGjLhAPwY3UreIFrw0'
 
 # Application definition
 
@@ -126,6 +127,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')    # to dynamic all static files 
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 LOGIN_URL = 'login'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
