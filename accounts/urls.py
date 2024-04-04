@@ -3,7 +3,9 @@ from django.contrib.auth import views as auth_views
 from . import views
 urlpatterns = [
     path('', views.account, name='accounts'),
+    path('test/',views.test),
     path('login/', views.login, name='login'),
+    path('whatsapp/', views.send_whatsapp_message, name='send_whatsapp_message'),
     path('register/', views.register, name='register'),
     path('logout/', views.logout, name='logout'),
     path('password-reset/',
