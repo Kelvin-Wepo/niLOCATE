@@ -3,11 +3,10 @@ import os
 import requests
 from urllib.parse import urlencode
 import json
-# from decouple import config
-# api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
+from django.conf import settings
 
-
-# api_key = config('KEY2')
+#api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
+api_key = settings.GOOGLE_API_KEY
 
 
 def search_nearby_places(lat, lng):

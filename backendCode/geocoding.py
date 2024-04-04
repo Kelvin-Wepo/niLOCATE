@@ -3,10 +3,10 @@ import os
 import requests
 from urllib.parse import urlencode
 from pprint import pprint
-# from decouple import config
+from django.conf import settings
 
-# api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
-# api_key = config('KEY2')
+#api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
+api_key = settings.GOOGLE_API_KEY
 
 
 def geocoding_from_address(address):
