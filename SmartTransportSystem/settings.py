@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-GOOGLE_API_KEY = 'AIzaSyB85LQ0LlYnWmPJnUGjLhAPwY3UreIFrw0'
 
 # Application definition
 
@@ -144,3 +143,7 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+GOOGLE_API_KEY = ''
+

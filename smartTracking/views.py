@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotAllowed
 from backendCode.geocoding import reverse_geocoding, geocoding_from_address
 from backendCode.nearbyplaces import search_nearby_places
 from home_page.models import BusInformation
@@ -8,16 +8,46 @@ from django.conf import settings
 # Create your views here.
 
 
+# def searchnearby_address(request):
+#     location = request.POST['userlocationaddress']
+#     # print(location)
+#     text = settings.GOOGLE_API_KEY
+#     url = f"https://maps.googleapis.com/maps/api/js?key={text}&callback=initMap&libraries=&v=weekly"
+#     data = geocoding_from_address(location)
+#     nearby_list = search_nearby_places(data['lat'], data['lng'])
+#     data.update({'nearlist': nearby_list})
+#     data.update({'text': url})
+#     return render(request, 'smartTracking/searchnearby.html', data)
+
+
+from django.conf import settings
+
+# Assuming `api_key` is set outside the function
+api_key = settings.GOOGLE_API_KEY
+
 def searchnearby_address(request):
-    location = request.POST['userlocationaddress']
-    # print(location)
-    text = settings.GOOGLE_API_KEY
-    url = f"https://maps.googleapis.com/maps/api/js?key={text}&callback=initMap&libraries=&v=weekly"
-    data = geocoding_from_address(location)
-    nearby_list = search_nearby_places(data['lat'], data['lng'])
-    data.update({'nearlist': nearby_list})
-    data.update({'text': url})
-    return render(request, 'smartTracking/searchnearby.html', data)
+    if request.method == 'POST':
+        location = request.POST.get('userlocationaddress', '')
+        url = f"https://maps.googleapis.com/maps/api/js?key={api_key}&callback=initMap&libraries=&v=weekly"
+
+        data = geocoding_from_address(location)
+        if data is None:
+            # Handle the case where no geocoding data is found
+            return render(request, 'smartTracking/error.html', {'message': 'No geocoding data found'})
+
+        nearby_list = search_nearby_places(data.get('lat', ''), data.get('lng', ''))
+        if nearby_list is None:
+            # Handle the case where no nearby places are found
+            return render(request, 'smartTracking/error.html', {'message': 'No nearby places found'})
+
+        data.update({'nearlist': nearby_list, 'text': url})
+        return render(request, 'smartTracking/searchnearby.html', data)
+    else:
+        return HttpResponseNotAllowed(['POST'])
+
+
+
+
 
 
 def searchnearby_latlng(request):
