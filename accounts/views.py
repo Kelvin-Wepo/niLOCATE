@@ -122,8 +122,10 @@ def feedback(request):
 
 @csrf_exempt
 def send_whatsapp_message(request):
-    account_sid = 'AC8d51a8e966e5a7d3a23f71dc88ea1efa'
-    auth_token = '83e2ed006bb6754285cf84fe10c4c97c'
+    #account_sid = 'AC8d51a8e966e5a7d3a23f71dc88ea1efa'
+    account_sid = ''
+   # auth_token = '83e2ed006bb6754285cf84fe10c4c97c'
+    auth_token = ''
     client = Client(account_sid, auth_token)
 
     message = request.POST['Body']
