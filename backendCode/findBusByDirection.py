@@ -1,10 +1,10 @@
 import os
 
 import googlemaps
-# from decouple import config
+from django.conf import settings
 
 # api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
-# api_key = config('KEY2')
+api_key = settings.GOOGLE_API_KEY
 
 
 def find_distance(route):
@@ -15,7 +15,8 @@ def find_distance(route):
     for i in range(len(route) - 1):
         ori = route[i]
         des = route[i + 1]
-        distance_raw = gmaps.distance_matrix(ori, des, region='BD')
+        distance_raw = gmaps.distance_matrix(ori, des, region='KE')
+        # distance_raw = gmaps.distance_matrix(ori,des,region='KE')
         distance_in_string = distance_raw['rows'][0]['elements'][0]['distance']['text']
         if distance_in_string[-1] == 'm' and distance_in_string[-2] == ' ':
             distance = distance_in_string[:-2]
@@ -36,3 +37,6 @@ def find_distance(route):
     # print(total_distance)
     return total_distance
 
+# r = [kencom', 'Koja', 'Riveroad', 'nyamakima', 'Archives', 'Railways', 'Afya center', 'OTC' 'Muthurwa' Moi Avenue odeon]
+#
+# find_distance(r)
