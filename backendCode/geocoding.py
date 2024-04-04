@@ -5,13 +5,14 @@ from urllib.parse import urlencode
 from pprint import pprint
 from django.conf import settings
 
-#api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
+# api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
 api_key = settings.GOOGLE_API_KEY
 
 
 def geocoding_from_address(address):
     endpoint = "https://maps.googleapis.com/maps/api/geocode/json"
-    params = {"address": address, 'region': 'bd', "key": api_key, }
+    params = {"address": address, 'region': 'ke', "key": api_key}
+    
     url_params = urlencode(params)
 
     url = f"{endpoint}?{url_params}"
@@ -31,7 +32,7 @@ def geocoding_from_address(address):
     return data
 
 
-# p = geocoding_from_address('Jhigatola bust stop')
+# p = geocoding_from_address('Kencom bustop')
 # print(p)
 
 def reverse_geocoding(latlang):
@@ -42,3 +43,5 @@ def reverse_geocoding(latlang):
     return address
 
 
+# add = reverse_geocoding('23.7465882,90.3846205')
+# print(add)
