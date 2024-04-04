@@ -3,9 +3,8 @@ import os
 import googlemaps
 from django.conf import settings
 
-# api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
+#api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
 api_key = settings.GOOGLE_API_KEY
-
 
 def find_distance(route):
     total_distance = 0.00

@@ -5,7 +5,6 @@ from urllib.parse import urlencode
 from pprint import pprint
 from django.conf import settings
 
-# api_key = os.environ.get("API_KEY")  # Get API Key From Your Device "System Environment Variable"
 api_key = settings.GOOGLE_API_KEY
 
 
