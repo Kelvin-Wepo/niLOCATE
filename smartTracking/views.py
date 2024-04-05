@@ -19,9 +19,6 @@ from django.conf import settings
 #     data.update({'text': url})
 #     return render(request, 'smartTracking/searchnearby.html', data)
 
-
-from django.conf import settings
-
 # Assuming `api_key` is set outside the function
 api_key = settings.GOOGLE_API_KEY
 

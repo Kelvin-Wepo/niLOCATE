@@ -145,5 +145,7 @@ LOGIN_URL = 'login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-GOOGLE_API_KEY = ''
+# GOOGLE_API_KEY = 'AIzaSyCsoYtqYcyQebNKq9SvfgX-Bs_8SxFZ_gc'
+
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
