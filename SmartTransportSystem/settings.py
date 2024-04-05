@@ -144,5 +144,3 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-GOOGLE_API_KEY='AIzaSyCGvqFr88E36yRact0tratu76ZOzfLo94A'
-AFRICASTALKING_API_KEY='a03310048e89221dc881820003f85c38353bcae6e28c545fe190bd109ef5933a'
