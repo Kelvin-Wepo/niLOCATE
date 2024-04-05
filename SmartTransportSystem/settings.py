@@ -29,8 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-GOOGLE_API_KEY = ''
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -144,5 +142,3 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-GOOGLE_API_KEY=''
-AFRICASTALKING_API_KEY=''

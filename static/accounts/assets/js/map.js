@@ -1,40 +1,85 @@
-function initMap() {
-    const directionsService = new google.maps.DirectionsService();
-    const directionsRenderer = new google.maps.DirectionsRenderer();
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 7,
-      center: { lat: 23.8103, lng: 90.4125 },
-    });
-    directionsRenderer.setMap(map);
+// function initMap() {
+//     const directionsService = new google.maps.DirectionsService();
+//     const directionsRenderer = new google.maps.DirectionsRenderer();
+//     const map = new google.maps.Map(document.getElementById("map"), {
+//       zoom: 7,
+//       center: { lat: 23.8103, lng: 90.4125 },
+//     });
+//     directionsRenderer.setMap(map);
 
-    const onChangeHandler = function () {
+//     const onChangeHandler = function () {
+//       calculateAndDisplayRoute(directionsService, directionsRenderer);
+//     };
+//     document
+//       .getElementById("start")
+//       .addEventListener("change", onChangeHandler);
+//     document
+//       .getElementById("end")
+//       .addEventListener("change", onChangeHandler);
+//   }
+
+//   function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+//     directionsService.route(
+//       {
+//         origin: {
+//           query: document.getElementById("start").value,
+//         },
+//         destination: {
+//           query: document.getElementById("end").value,
+//         },
+//         travelMode: google.maps.TravelMode.DRIVING,
+//       },
+//       (response, status) => {
+//         if (status === "OK") {
+//           directionsRenderer.setDirections(response);
+//         } else {
+//           window.alert("Directions request failed due to " + status);
+//         }
+//       }
+//     );
+//   }
+
+
+
+
+function initMap() {
+  const directionsService = new google.maps.DirectionsService();
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 7,
+      center: { lat: 1.2921, lng: 36.8219 }, // Centered on Nairobi, Kenya
+  });
+  directionsRenderer.setMap(map);
+
+  const onChangeHandler = function () {
       calculateAndDisplayRoute(directionsService, directionsRenderer);
-    };
-    document
+  };
+  document
       .getElementById("start")
       .addEventListener("change", onChangeHandler);
-    document
+  document
       .getElementById("end")
       .addEventListener("change", onChangeHandler);
-  }
+}
 
-  function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-    directionsService.route(
+function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+  directionsService.route(
       {
-        origin: {
-          query: document.getElementById("start").value,
-        },
-        destination: {
-          query: document.getElementById("end").value,
-        },
-        travelMode: google.maps.TravelMode.DRIVING,
+          origin: {
+              query: document.getElementById("start").value,
+          },
+          destination: {
+              query: document.getElementById("end").value,
+          },
+          travelMode: google.maps.TravelMode.DRIVING,
       },
       (response, status) => {
-        if (status === "OK") {
-          directionsRenderer.setDirections(response);
-        } else {
-          window.alert("Directions request failed due to " + status);
-        }
+          if (status === "OK") {
+              directionsRenderer.setDirections(response);
+          } else {
+              window.alert("Directions request failed due to " + status);
+          }
       }
-    );
-  }
+  );
+}
+
