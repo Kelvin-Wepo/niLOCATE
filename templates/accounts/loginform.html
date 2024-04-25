@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sign-in to Smart Transport System</title>
+  <title>Sign-In to Smart Transport System</title>
 <!-- Google Fonts  -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> 
@@ -20,11 +20,6 @@
 <body onload="switchMe()">
 <!-- ............NAVBAR............... -->
 <nav class="navbar">
-   <div class="brand-title">
-      <a href="{% url 'home' %}" class="mr-auto">
-         <img src="{% static 'accounts/assets/img/logo.png' %}" width="150px" height="" alt="" class="img-fluid">
-      </a>
-   </div>
    <a href="#" class="toggle-button">
      <span class="bar"></span>
      <span class="bar"></span>
@@ -45,7 +40,7 @@
          {% else %}
             <li>
                <button id="myBtn" type="button" class="btn btn-red" onclick="document.location='{% url 'accounts' %}'">
-                     SignUP/Login
+                     Sign Up/ Login
                </button>
             </li>
          {% endif %}
@@ -61,10 +56,9 @@
 
          <!-- Brand Box -->
          <div class="col-sm-6 brand">
-            <a href="#" class="logo">STS <span>.</span></a>
-
+            
             <div class="heading">
-               <h1><img src="{% static 'accounts/assets/img/logo.png' %}" width="250px" height="" alt="" class="img-fluid"></h1>
+               <img src="/static/accounts/assets/img/niLOCATE; Color.png" alt="niLOCATE logo" width="150px">
                <p>Your Transportation Partner</p>
             </div>
 
@@ -129,8 +123,8 @@
                   </div>
 
                   <div class="form-group">
-                     <label for="email">Email Adderss</label>
-                     <input type="email" name="emailAdress" id="email" class="email" value="{{ values.email }}" required>
+                     <label for="email">Email Address</label>
+                     <input type="email" name="emailAddress" id="email" class="email" value="{{ values.email }}" required>
                      <span class="error"></span>
                      <!-- Check Email in Database -->
                      {% if 'signup' ==  from %}
