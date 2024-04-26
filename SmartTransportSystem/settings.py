@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'SmartTransportSystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Africas',    
+        'USER': 'kwepo',    
+        'PASSWORD': 'Access',   
+        'HOST': 'localhost',    
+        'PORT': '5432',    
     }
 }
 
@@ -142,3 +146,6 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AFRICASTALKING_API_KEY ='cb6edf5dd470e0bde0bd637b224a353d3e98ba0ad5b0cd06174d1c64b4dbf6da'
+
+GOOGLE_API_KEY ='AIzaSyDv4K3Fqma6Y6gcbrAbdAKT9sr7lbKIcoA'
