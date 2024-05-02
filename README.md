@@ -8,7 +8,7 @@ The niLocate Web App is a project developed to address the challenge faced by Na
 - **Google Maps Integration**: Utilizes Google Maps API to display the user's location and nearby bus stations.
 - **Bus Station Locator**: Allows users to search for nearby bus stations operating along their routes.
 - **Bus Information**: Provides a list of available buses operating along the user's route.
-- **2G Network Compatibility**: Enables 2G network users to access the app's services by dialing *700*20#.
+- **2G Network Compatibility**: Enables 2G network users to access the app's services by dialing *700* 20#.
 
 ## Technologies Used
 
