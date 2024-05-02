@@ -90,7 +90,7 @@ def register(request):  # getting new user info
         # After registration auto login the user and redirect to home page
         user = auth.authenticate(username=user_name, password=password)
         auth.login(request, user)
-        africastalking_username = 'lyzy'
+        africastalking_username = 'kwepo'
         africastalking_api_key = africastalking.api_key
             
         africastalking.initialize(africastalking_username, africastalking_api_key)
