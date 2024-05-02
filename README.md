@@ -1,4 +1,4 @@
-# Nairobi Matatu Finder Web App
+# niLOCATE Web App
 
 The niLocate Web App is a project developed to address the challenge faced by Nairobi commuters in locating matatu bus stations along their routes. The app utilizes Django, Python, CSS, Bootstrap, and Google APIs to provide a user-friendly interface for commuters to find nearby bus stations and view available buses operating along their routes.
 
