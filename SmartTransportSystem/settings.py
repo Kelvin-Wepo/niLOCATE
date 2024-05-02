@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-# from decouple import config
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -146,6 +146,11 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AFRICASTALKING_API_KEY ='cb6edf5dd470e0bde0bd637b224a353d3e98ba0ad5b0cd06174d1c64b4dbf6da'
 
-GOOGLE_API_KEY ='AIzaSyDv4K3Fqma6Y6gcbrAbdAKT9sr7lbKIcoA'
+
+
+# Google Maps API Key
+GOOGLE_API_KEY = config('GOOGLE_API_KEY')
+
+# Africa's Talking API Key
+AFRICASTALKING_API_KEY = config('AFRICASTALKING_API_KEY')
