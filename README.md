@@ -30,6 +30,11 @@ To run the project locally, follow these steps:
 ## Contributors
 
 - [Kelvin Wepo](https://github.com/Kelvin-Wepo) - Project Lead
+- Faith Waithera - contributor Project
+- Faith Kago - contributor Project
+- David Nanjile  - contributor project
+- Alvin Kiprotich - Contributor project
+- Brain Maseno - Contributor project
 
 ## Acknowledgements
 
