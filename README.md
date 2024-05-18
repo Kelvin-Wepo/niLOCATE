@@ -10,6 +10,8 @@ The niLocate Web App is a project developed to address the challenge faced by Na
 - **Bus Station Locator**: Allows users to search for nearby bus stations operating along their routes.
 - **Bus Information**: Provides a list of available buses operating along the user's route.
 - **2G Network Compatibility**: Enables 2G network users to access the app's services by dialing *700* 20#.
+- ![image](https://github.com/Kelvin-Wepo/niLOCATE/assets/148878314/cab4ab45-10f4-46cf-be58-5c24368be258)
+
 
 ## Technologies Used
 
