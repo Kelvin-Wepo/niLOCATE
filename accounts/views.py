@@ -70,7 +70,7 @@ def register(request):  # getting new user info
     if User.objects.filter(username=user_name).exists():  # checking user name from database
         message = {
             'from': 'signup',
-            'error': 'User name is already taken',
+            'error': 'User name is alrAeady taken',
             'values': values  # to stay in form
         }
         return render(request, 'accounts/loginform.html', message)  # return with message
